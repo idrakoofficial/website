@@ -260,26 +260,39 @@
 
 /* ── GLITCH HOVER on logo ── */
 (function initGlitch() {
-  const logo = document.querySelector('.logo-text');
+  const logo = document.querySelector('.nav-logo .logo-wordmark');
   if (!logo) return;
 
+  const glitchChars = '!@#X01<>|_';
+  const parts = ['FUTURE', 'NOVA'];
   let glitchTimer;
+
   logo.addEventListener('mouseenter', () => {
     let count = 0;
-    const chars = 'FUTURENOVA';
-    const glitchChars = '!@#$%^&*X01';
-
     glitchTimer = setInterval(() => {
-      if (count > 6) { clearInterval(glitchTimer); logo.querySelector('span')?.previousSibling && (logo.childNodes[0].textContent = 'FUTURE'); return; }
-      const r = Math.floor(Math.random() * 10);
-      const replace = chars.split('').map((c, i) => i === r ? glitchChars[Math.floor(Math.random() * glitchChars.length)] : c).join('');
-      logo.childNodes[0].textContent = replace;
+      if (count > 7) {
+        clearInterval(glitchTimer);
+        /* restore text nodes */
+        logo.childNodes[0].textContent = 'FUTURE';
+        logo.childNodes[2].textContent = 'NOVA';
+        return;
+      }
+      const full = 'FUTURENOVA';
+      const r    = Math.floor(Math.random() * full.length);
+      const gc   = glitchChars[Math.floor(Math.random() * glitchChars.length)];
+      /* apply to correct text node */
+      if (r < 6) {
+        logo.childNodes[0].textContent = 'FUTURE'.split('').map((c, i) => i === r ? gc : c).join('');
+      } else {
+        logo.childNodes[2].textContent = 'NOVA'.split('').map((c, i) => i === (r - 6) ? gc : c).join('');
+      }
       count++;
-    }, 60);
+    }, 55);
   });
 
   logo.addEventListener('mouseleave', () => {
     clearInterval(glitchTimer);
     logo.childNodes[0].textContent = 'FUTURE';
+    logo.childNodes[2].textContent = 'NOVA';
   });
 })();

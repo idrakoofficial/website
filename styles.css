@@ -160,14 +160,110 @@ body:hover .cursor-follower { opacity: 1; }
 .nav-logo {
   display: flex; flex-direction: column; gap: 2px;
 }
-.logo-text {
-  font-family: var(--font-main); font-size: 22px; font-weight: 700;
-  letter-spacing: 2px;
-}
-.logo-accent { color: var(--blue); }
 .logo-tag {
   font-size: 9px; letter-spacing: 2px; text-transform: uppercase;
-  color: var(--white-30); font-weight: 400;
+  color: var(--white-30); font-weight: 400; margin-top: 3px;
+}
+
+/* ── LOGO WORDMARK (Orbitron glow) ── */
+.logo-wordmark-wrap {
+  display: flex; align-items: center; gap: 0;
+}
+
+.logo-wordmark {
+  font-family: 'Orbitron', 'Space Grotesk', sans-serif;
+  font-weight: 900;
+  font-size: 21px;
+  letter-spacing: 3.5px;
+  color: #ffffff;
+  position: relative;
+  text-shadow:
+    0 0 4px #fff,
+    0 0 10px rgba(200, 240, 255, 1),
+    0 0 22px rgba(80, 195, 255, 0.9),
+    0 0 45px rgba(0, 155, 255, 0.75),
+    0 0 80px rgba(0, 115, 255, 0.55),
+    0 0 140px rgba(0, 75, 255, 0.3);
+}
+
+/* Middle spark between FUTURE and NOVA */
+.logo-mid-spark {
+  display: inline-block;
+  width: 0; height: 0;
+  position: relative;
+  vertical-align: middle;
+}
+.logo-mid-spark::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 50%;
+  width: 1.5px; height: 16px;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(to bottom, transparent, rgba(200,240,255,0.9), #fff, rgba(200,240,255,0.9), transparent);
+  box-shadow: 0 0 6px 3px rgba(100, 200, 255, 0.7);
+}
+
+/* Left beam */
+.logo-beam-left {
+  width: 30px; height: 1.5px; flex-shrink: 0;
+  background: linear-gradient(to right, transparent, rgba(120,210,255,0.65), rgba(255,255,255,0.95));
+  box-shadow: 0 0 8px 2px rgba(80,185,255,0.7), 0 0 20px 4px rgba(0,120,255,0.45);
+  position: relative;
+}
+/* Vertical cross on left beam */
+.logo-beam-left::before {
+  content: '';
+  position: absolute;
+  right: 0; top: 50%;
+  width: 1.5px; height: 18px;
+  transform: translate(50%, -50%);
+  background: linear-gradient(to bottom, transparent, rgba(200,240,255,0.85), #fff, rgba(200,240,255,0.85), transparent);
+  box-shadow: 0 0 6px 2px rgba(100,200,255,0.65);
+}
+
+/* Right beam */
+.logo-beam-right {
+  width: 30px; height: 1.5px; flex-shrink: 0;
+  background: linear-gradient(to left, transparent, rgba(120,210,255,0.65), rgba(255,255,255,0.95));
+  box-shadow: 0 0 8px 2px rgba(80,185,255,0.7), 0 0 20px 4px rgba(0,120,255,0.45);
+  position: relative;
+}
+/* Vertical cross on right */
+.logo-beam-right::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 50%;
+  width: 1.5px; height: 18px;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(to bottom, transparent, rgba(200,240,255,0.85), #fff, rgba(200,240,255,0.85), transparent);
+  box-shadow: 0 0 6px 2px rgba(100,200,255,0.65);
+}
+/* Diagonal lightning bolt on right (characteristic of the logo) */
+.logo-beam-right::after {
+  content: '';
+  position: absolute;
+  left: 0; top: 50%;
+  width: 20px; height: 1.5px;
+  transform: translateY(-50%) rotate(42deg);
+  transform-origin: left center;
+  background: linear-gradient(to right, rgba(255,255,255,0.9), rgba(100,200,255,0.4), transparent);
+  box-shadow: 0 0 5px 1px rgba(100,200,255,0.55);
+}
+
+/* Footer logo bigger */
+.logo-wordmark--footer {
+  font-size: 28px; letter-spacing: 4px;
+}
+.logo-wordmark-wrap--footer .logo-beam-left,
+.logo-wordmark-wrap--footer .logo-beam-right {
+  width: 40px;
+}
+.logo-wordmark-wrap--footer .logo-beam-left::before,
+.logo-wordmark-wrap--footer .logo-beam-right::before {
+  height: 24px;
+}
+.logo-wordmark-wrap--footer .logo-mid-spark::before {
+  height: 22px;
 }
 .nav-links {
   display: flex; align-items: center; gap: 36px;
