@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FutureNova — Augmented Marketing Agency</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NOISE OVERLAY -->
+  <div class="noise-overlay"></div>
+
+  <!-- CURSOR -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <span class="logo-text">FUTURE<span class="logo-accent">NOVA</span></span>
+        <span class="logo-tag">augmented marketing agency</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#chi-siamo">Chi Siamo</a></li>
+        <li><a href="#servizi">Servizi</a></li>
+        <li><a href="#pilastri">Valori</a></li>
+        <li><a href="#contatti" class="nav-cta">Inizia l'Evoluzione</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#chi-siamo" class="mobile-link">Chi Siamo</a></li>
+      <li><a href="#servizi" class="mobile-link">Servizi</a></li>
+      <li><a href="#pilastri" class="mobile-link">Valori</a></li>
+      <li><a href="#contatti" class="mobile-link">Inizia l'Evoluzione</a></li>
+    </ul>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <canvas class="hero-canvas" id="heroCanvas"></canvas>
+    <div class="hero-grid-lines"></div>
+    <div class="hero-content">
+      <div class="hero-badge reveal">
+        <span class="badge-dot"></span>
+        Augmented Marketing Agency
+      </div>
+      <h1 class="hero-title reveal">
+        Il Futuro del<br />
+        <span class="gradient-text">Marketing</span><br />
+        è già qui.
+      </h1>
+      <p class="hero-sub reveal">
+        Trasformiamo idee complesse in risultati di marketing immediati e straordinari.<br />
+        Con l'intelligenza artificiale al centro di ogni strategia.
+      </p>
+      <div class="hero-actions reveal">
+        <a href="#contatti" class="btn-primary">
+          <span>Inizia l'Evoluzione</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#servizi" class="btn-ghost">Scopri i Servizi</a>
+      </div>
+      <div class="hero-stats reveal">
+        <div class="stat">
+          <span class="stat-num" data-target="340">0</span><span class="stat-suffix">%</span>
+          <span class="stat-label">ROI Medio</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num" data-target="48">0</span><span class="stat-suffix">h</span>
+          <span class="stat-label">Time to Market</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num" data-target="200">0</span><span class="stat-suffix">+</span>
+          <span class="stat-label">Brand Evoluti</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll-indicator">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-wrapper">
+    <div class="marquee-track">
+      <span>Generative Branding</span><span class="dot">·</span>
+      <span>AI-Video Production</span><span class="dot">·</span>
+      <span>Dynamic Visuals</span><span class="dot">·</span>
+      <span>GEO Optimization</span><span class="dot">·</span>
+      <span>AI Agents</span><span class="dot">·</span>
+      <span>Hyper-Personalized Email</span><span class="dot">·</span>
+      <span>Brand Reputation AI</span><span class="dot">·</span>
+      <span>Generative Branding</span><span class="dot">·</span>
+      <span>AI-Video Production</span><span class="dot">·</span>
+      <span>Dynamic Visuals</span><span class="dot">·</span>
+      <span>GEO Optimization</span><span class="dot">·</span>
+      <span>AI Agents</span><span class="dot">·</span>
+      <span>Hyper-Personalized Email</span><span class="dot">·</span>
+      <span>Brand Reputation AI</span><span class="dot">·</span>
+    </div>
+  </div>
+
+  <!-- CHI SIAMO -->
+  <section class="about" id="chi-siamo">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-left">
+          <div class="section-label reveal">Chi Siamo</div>
+          <h2 class="section-title reveal">
+            Non siamo una<br />
+            agenzia. Siamo<br />
+            <span class="gradient-text">il tuo futuro.</span>
+          </h2>
+          <div class="about-visual reveal">
+            <div class="orb orb-1"></div>
+            <div class="orb orb-2"></div>
+            <div class="orb orb-3"></div>
+            <div class="about-ring">
+              <svg viewBox="0 0 200 200" class="ring-svg">
+                <circle cx="100" cy="100" r="90" class="ring-track" />
+                <circle cx="100" cy="100" r="90" class="ring-progress" />
+              </svg>
+              <div class="ring-label">AI<br/>Powered</div>
+            </div>
+          </div>
+        </div>
+        <div class="about-right">
+          <div class="mission-card reveal">
+            <div class="card-label">Mission</div>
+            <p>Rendiamo la creatività d'avanguardia accessibile a tutti. Usiamo l'intelligenza artificiale per trasformare idee complesse in risultati di marketing immediati e straordinari.</p>
+          </div>
+          <div class="vision-card reveal">
+            <div class="card-label">Vision</div>
+            <p>Ridefinire il confine tra pensiero umano e potenza digitale, diventando l'architetto di un mondo in cui ogni idea può diventare realtà istantanea e ogni brand può comunicare la propria essenza senza limiti di tempo o budget.</p>
+          </div>
+          <div class="about-quote reveal">
+            <blockquote>
+              "L'AI non sostituisce l'umanità.<br />
+              Ne abbatte i limiti."
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PILASTRI -->
+  <section class="pillars" id="pilastri">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label reveal">Perché Sceglierci</div>
+        <h2 class="section-title reveal">Quattro pilastri.<br /><span class="gradient-text">Un'unica visione.</span></h2>
+      </div>
+      <div class="pillars-grid">
+        <div class="pillar-card reveal" data-delay="0">
+          <div class="pillar-icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M24 4C13 4 4 13 4 24s9 20 20 20 20-9 20-20S35 4 24 4z"/>
+              <path d="M16 24l5 5 11-11"/>
+              <path d="M24 12v4M24 32v4M12 24h4M32 24h4"/>
+            </svg>
+          </div>
+          <div class="pillar-num">01</div>
+          <h3>Augmented<br />Creativity</h3>
+          <p>L'AI non sostituisce l'umanità, ma ne abbatte i limiti temporali e tecnici. Ogni idea diventa realtà, senza compromessi.</p>
+        </div>
+        <div class="pillar-card reveal" data-delay="100">
+          <div class="pillar-icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M8 24h8l4-12 8 24 4-12h8"/>
+            </svg>
+          </div>
+          <div class="pillar-num">02</div>
+          <h3>Hyper-Speed</h3>
+          <p>In un mercato che corre, l'agilità è tutto. Portiamo i tuoi progetti sul mercato in tempi che prima erano impossibili.</p>
+        </div>
+        <div class="pillar-card reveal" data-delay="200">
+          <div class="pillar-icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="8" y="8" width="14" height="14" rx="2"/>
+              <rect x="26" y="8" width="14" height="14" rx="2"/>
+              <rect x="8" y="26" width="14" height="14" rx="2"/>
+              <rect x="26" y="26" width="14" height="14" rx="2"/>
+            </svg>
+          </div>
+          <div class="pillar-num">03</div>
+          <h3>Data-Driven<br />Beauty</h3>
+          <p>Non creiamo solo cose "belle", ma contenuti progettati per performare, analizzando ciò che il tuo pubblico ama davvero.</p>
+        </div>
+        <div class="pillar-card reveal" data-delay="300">
+          <div class="pillar-icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M24 4l4 8h9l-7 6 3 9-9-6-9 6 3-9-7-6h9z"/>
+              <circle cx="24" cy="36" r="8"/>
+            </svg>
+          </div>
+          <div class="pillar-num">04</div>
+          <h3>Future-<br />Proofing</h3>
+          <p>Aiutiamo i brand a non diventare obsoleti, adottando oggi le tecnologie che tutti gli altri useranno tra due anni.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVIZI -->
+  <section class="services" id="servizi">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label reveal">Servizi</div>
+        <h2 class="section-title reveal">Non facciamo solo grafiche.<br /><span class="gradient-text">Creiamo ecosistemi visivi intelligenti.</span></h2>
+      </div>
+      <div class="services-list">
+
+        <div class="service-item reveal">
+          <div class="service-header">
+            <div class="service-num">01</div>
+            <div class="service-title-wrap">
+              <h3>Generative Branding</h3>
+              <div class="service-tag">Identity AI</div>
+            </div>
+            <div class="service-arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+            </div>
+          </div>
+          <div class="service-body">
+            <p>Creazione di intere identità di marca — loghi, palette, pattern — generate da algoritmi che analizzano i trend estetici del tuo settore. Il tuo brand, distillato in dati e restituito come capolavoro visivo.</p>
+            <div class="service-tags">
+              <span>Logo AI</span><span>Color System</span><span>Brand Pattern</span><span>Style Guide</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-item reveal">
+          <div class="service-header">
+            <div class="service-num">02</div>
+            <div class="service-title-wrap">
+              <h3>AI-Video Production</h3>
+              <div class="service-tag">Cinema AI</div>
+            </div>
+            <div class="service-arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+            </div>
+          </div>
+          <div class="service-body">
+            <p>Video promozionali e cinematici ad alta risoluzione senza set fotografici, attori o location. Ottimizzati per l'engagement sui social. Produzione professionale al costo di un post.</p>
+            <div class="service-tags">
+              <span>Spot Video</span><span>Reel Social</span><span>Brand Film</span><span>UGC AI</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-item reveal">
+          <div class="service-header">
+            <div class="service-num">03</div>
+            <div class="service-title-wrap">
+              <h3>Dynamic Visuals</h3>
+              <div class="service-tag">Adaptive UI</div>
+            </div>
+            <div class="service-arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+            </div>
+          </div>
+          <div class="service-body">
+            <p>Contenuti grafici per il sito web che cambiano in tempo reale in base a chi li sta guardando. Colori diversi, messaggi diversi, esperienze diverse — per ogni utente, il suo universo.</p>
+            <div class="service-tags">
+              <span>Personalization</span><span>A/B Automation</span><span>Dynamic Copy</span><span>Real-time UX</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-item reveal">
+          <div class="service-header">
+            <div class="service-num">04</div>
+            <div class="service-title-wrap">
+              <h3>AI Search Optimization (GEO)</h3>
+              <div class="service-tag">Beyond SEO</div>
+            </div>
+            <div class="service-arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+            </div>
+          </div>
+          <div class="service-body">
+            <p>Non più solo SEO per Google. Ottimizzazione per i motori di risposta — ChatGPT, Perplexity, Gemini — per far apparire il tuo brand nelle risposte vocali e testuali dell'AI.</p>
+            <div class="service-tags">
+              <span>GEO Strategy</span><span>AI Citations</span><span>Voice Search</span><span>LLM Visibility</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-item reveal">
+          <div class="service-header">
+            <div class="service-num">05</div>
+            <div class="service-title-wrap">
+              <h3>Brand Reputation AI</h3>
+              <div class="service-tag">Sentiment Monitor</div>
+            </div>
+            <div class="service-arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+            </div>
+          </div>
+          <div class="service-body">
+            <p>Monitoraggio costante della reputazione online tramite algoritmi che intercettano le emozioni degli utenti e suggeriscono come rispondere — prima che una crisi diventi un terremoto.</p>
+            <div class="service-tags">
+              <span>Sentiment AI</span><span>Crisis Prediction</span><span>Review Management</span><span>Trend Alert</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-item reveal">
+          <div class="service-header">
+            <div class="service-num">06</div>
+            <div class="service-title-wrap">
+              <h3>AI Agents — Digital Twins</h3>
+              <div class="service-tag">Always On</div>
+            </div>
+            <div class="service-arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+            </div>
+          </div>
+          <div class="service-body">
+            <p>Assistenti virtuali personalizzati che vendono, rispondono e assistono i clienti 24 ore su 24 con linguaggio naturale. Il tuo miglior collaboratore — che non dorme mai.</p>
+            <div class="service-tags">
+              <span>Chatbot AI</span><span>Sales Agent</span><span>Customer Care</span><span>Digital Twin</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-item reveal">
+          <div class="service-header">
+            <div class="service-num">07</div>
+            <div class="service-title-wrap">
+              <h3>Hyper-Personalized Emailing</h3>
+              <div class="service-tag">1:1 at Scale</div>
+            </div>
+            <div class="service-arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+            </div>
+          </div>
+          <div class="service-body">
+            <p>Campagne email dove ogni singolo utente riceve un testo e un'offerta unica, scritta dall'AI in base al suo comportamento d'acquisto. Un milione di email, un milione di conversazioni.</p>
+            <div class="service-tags">
+              <span>Behavioral AI</span><span>Dynamic Content</span><span>Predictive Send</span><span>Conversion AI</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section class="cta-band">
+    <div class="cta-band-bg"></div>
+    <div class="container">
+      <div class="cta-band-inner reveal">
+        <div class="cta-band-label">Pronti a evolvere?</div>
+        <h2>Il tuo brand merita<br /><span class="gradient-text">il futuro di oggi.</span></h2>
+        <a href="#contatti" class="btn-primary btn-large">
+          <span>Inizia l'Evoluzione</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATTI -->
+  <section class="contact" id="contatti">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-left">
+          <div class="section-label reveal">Contatti</div>
+          <h2 class="section-title reveal">Parliamo del<br /><span class="gradient-text">tuo futuro.</span></h2>
+          <p class="contact-sub reveal">Compila il form e un nostro strategist ti risponderà entro 24 ore con un'analisi gratuita del tuo brand.</p>
+          <div class="contact-info reveal">
+            <div class="info-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              <span>hello@futurenova.ai</span>
+            </div>
+            <div class="info-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              <span>Milano, Italia</span>
+            </div>
+          </div>
+        </div>
+        <div class="contact-right">
+          <form class="contact-form reveal" id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Nome</label>
+                <input type="text" id="name" placeholder="Il tuo nome" required />
+              </div>
+              <div class="form-group">
+                <label for="company">Azienda</label>
+                <input type="text" id="company" placeholder="La tua azienda" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" placeholder="nome@azienda.com" required />
+            </div>
+            <div class="form-group">
+              <label for="service">Servizio di interesse</label>
+              <select id="service">
+                <option value="">Seleziona un servizio</option>
+                <option>Generative Branding</option>
+                <option>AI-Video Production</option>
+                <option>Dynamic Visuals</option>
+                <option>AI Search Optimization (GEO)</option>
+                <option>Brand Reputation AI</option>
+                <option>AI Agents — Digital Twins</option>
+                <option>Hyper-Personalized Emailing</option>
+                <option>Strategia Completa</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Messaggio</label>
+              <textarea id="message" rows="4" placeholder="Raccontaci della tua sfida..."></textarea>
+            </div>
+            <button type="submit" class="btn-primary btn-full">
+              <span>Invia e Inizia l'Evoluzione</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">FUTURE<span class="logo-accent">NOVA</span></div>
+          <p class="footer-tagline">Augmented Marketing Agency</p>
+          <p class="footer-mission">Rendiamo la creatività d'avanguardia<br />accessibile a tutti.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Servizi</h4>
+            <ul>
+              <li><a href="#">Generative Branding</a></li>
+              <li><a href="#">AI-Video Production</a></li>
+              <li><a href="#">Dynamic Visuals</a></li>
+              <li><a href="#">GEO Optimization</a></li>
+              <li><a href="#">AI Agents</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Azienda</h4>
+            <ul>
+              <li><a href="#">Chi Siamo</a></li>
+              <li><a href="#">Casi Studio</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Contatti</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Seguici</h4>
+            <ul>
+              <li><a href="#">LinkedIn</a></li>
+              <li><a href="#">Instagram</a></li>
+              <li><a href="#">YouTube</a></li>
+              <li><a href="#">X / Twitter</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 FutureNova. Tutti i diritti riservati.</span>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
