@@ -22,11 +22,28 @@
   <nav class="nav" id="nav">
     <div class="nav-inner">
       <a href="#" class="nav-logo">
-        <div class="logo-wordmark-wrap">
-          <div class="logo-beam-left"></div>
-          <span class="logo-wordmark">FUTURE<span class="logo-mid-spark" aria-hidden="true"></span>NOVA</span>
-          <div class="logo-beam-right"></div>
-        </div>
+        <svg class="logo-svg" viewBox="0 0 260 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <filter id="fn-glow" x="-15%" y="-120%" width="130%" height="340%">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="b1"/>
+              <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="b2"/>
+              <feColorMatrix in="b2" type="matrix"
+                values="0 0 0 0 0.05  0 0.3 0 0 0.55  0 0 1 0 1  0 0 0 0.9 0" result="blue"/>
+              <feMerge>
+                <feMergeNode in="blue"/>
+                <feMergeNode in="b1"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+          </defs>
+          <line x1="1" y1="18" x2="20" y2="18" stroke="#9fd8ff" stroke-width="1.5" filter="url(#fn-glow)"/>
+          <line x1="1" y1="10" x2="1" y2="26" stroke="white" stroke-width="1.2" filter="url(#fn-glow)"/>
+          <text x="24" y="26" font-family="Orbitron,monospace" font-weight="900" font-size="20"
+            textLength="213" lengthAdjust="spacingAndGlyphs" fill="white" filter="url(#fn-glow)">FUTURENOVA</text>
+          <line x1="240" y1="18" x2="258" y2="18" stroke="#9fd8ff" stroke-width="1.5" filter="url(#fn-glow)"/>
+          <line x1="258" y1="10" x2="258" y2="26" stroke="white" stroke-width="1.2" filter="url(#fn-glow)"/>
+          <line x1="243" y1="10" x2="258" y2="26" stroke="#c8eeff" stroke-width="1.5" filter="url(#fn-glow)"/>
+        </svg>
         <span class="logo-tag">augmented marketing agency</span>
       </a>
       <ul class="nav-links">
@@ -122,79 +139,53 @@
   <!-- CHI SIAMO -->
   <section class="about" id="chi-siamo">
     <div class="container">
-      <div class="about-grid">
-        <div class="about-left">
-          <div class="section-label reveal">Chi Siamo</div>
-          <h2 class="section-title reveal">
-            Non siamo una<br />
-            agenzia. Siamo<br />
-            <span class="gradient-text">il tuo futuro.</span>
-          </h2>
-          <div class="about-visual reveal">
-            <div class="orb orb-1"></div>
-            <div class="orb orb-2"></div>
-            <div class="orb orb-3"></div>
-            <div class="about-ring">
-              <svg viewBox="0 0 200 200" class="ring-svg">
-                <circle cx="100" cy="100" r="90" class="ring-track" />
-                <circle cx="100" cy="100" r="90" class="ring-progress" />
-              </svg>
-              <div class="ring-label">AI<br/>Powered</div>
-            </div>
+      <div class="about-intro">
+        <div class="section-label reveal">Chi Siamo</div>
+        <h2 class="section-title reveal">
+          Non siamo una agenzia.<br />Siamo
+          <span class="gradient-text">il tuo futuro.</span>
+        </h2>
+      </div>
+    </div>
+
+    <div class="mv-showcase">
+
+      <div class="mv-pane mv-pane--m reveal">
+        <div class="mv-pane-num" aria-hidden="true">01</div>
+        <div class="mv-pane-inner">
+          <div class="mv-pane-label">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1"/><circle cx="8" cy="8" r="2.5" stroke="currentColor" stroke-width="1"/><line x1="8" y1="1" x2="8" y2="0" stroke="currentColor"/><line x1="8" y1="15" x2="8" y2="16" stroke="currentColor"/><line x1="1" y1="8" x2="0" y2="8" stroke="currentColor"/><line x1="15" y1="8" x2="16" y2="8" stroke="currentColor"/></svg>
+            Mission
           </div>
+          <h3 class="mv-pane-title">Creatività<br/>senza<br/>limiti.</h3>
+          <p>Rendiamo la creatività d'avanguardia accessibile a tutti. Usiamo l'intelligenza artificiale per trasformare idee complesse in risultati di marketing immediati e straordinari.</p>
         </div>
-        <div class="about-right">
-          <div class="mv-grid">
+        <div class="mv-pane-orb"></div>
+        <div class="mv-pane-grid"></div>
+      </div>
 
-            <div class="mv-card reveal" data-delay="0">
-              <div class="mv-card-glow"></div>
-              <div class="mv-card-bg-text">M</div>
-              <div class="mv-card-top">
-                <div class="mv-icon">
-                  <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4">
-                    <circle cx="20" cy="20" r="16"/>
-                    <circle cx="20" cy="20" r="8"/>
-                    <circle cx="20" cy="20" r="2" fill="currentColor" stroke="none"/>
-                    <line x1="20" y1="4" x2="20" y2="0"/>
-                    <line x1="20" y1="36" x2="20" y2="40"/>
-                    <line x1="4" y1="20" x2="0" y2="20"/>
-                    <line x1="36" y1="20" x2="40" y2="20"/>
-                  </svg>
-                </div>
-                <div class="mv-label">Mission</div>
-              </div>
-              <h3 class="mv-headline">Creatività<br/>senza limiti.</h3>
-              <p class="mv-text">Rendiamo la creatività d'avanguardia accessibile a tutti. Usiamo l'intelligenza artificiale per trasformare idee complesse in risultati di marketing immediati e straordinari.</p>
-              <div class="mv-card-line"></div>
-            </div>
-
-            <div class="mv-card mv-card--vision reveal" data-delay="150">
-              <div class="mv-card-glow mv-card-glow--v"></div>
-              <div class="mv-card-bg-text">V</div>
-              <div class="mv-card-top">
-                <div class="mv-icon mv-icon--v">
-                  <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4">
-                    <path d="M4 8h32M4 8l16 24L36 8"/>
-                    <path d="M10 8l10 15 10-15" opacity="0.4"/>
-                    <circle cx="20" cy="32" r="2" fill="currentColor" stroke="none"/>
-                  </svg>
-                </div>
-                <div class="mv-label mv-label--v">Vision</div>
-              </div>
-              <h3 class="mv-headline">Il futuro<br/>è adesso.</h3>
-              <p class="mv-text">Ridefinire il confine tra pensiero umano e potenza digitale, diventando l'architetto di un mondo in cui ogni idea può diventare realtà istantanea e ogni brand può comunicare la propria essenza senza limiti di tempo o budget.</p>
-              <div class="mv-card-line mv-card-line--v"></div>
-            </div>
-
+      <div class="mv-pane mv-pane--v reveal" data-delay="200">
+        <div class="mv-pane-num" aria-hidden="true">02</div>
+        <div class="mv-pane-inner">
+          <div class="mv-pane-label mv-pane-label--v">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><polygon points="8,1 15,13 1,13" stroke="currentColor" stroke-width="1" fill="none"/><line x1="8" y1="6" x2="8" y2="9" stroke="currentColor" stroke-width="1.5"/><circle cx="8" cy="11" r="0.8" fill="currentColor"/></svg>
+            Vision
           </div>
-
-          <div class="about-quote reveal">
-            <blockquote>
-              "L'AI non sostituisce l'umanità.<br />
-              Ne abbatte i limiti."
-            </blockquote>
-          </div>
+          <h3 class="mv-pane-title">Il futuro<br/>è già<br/>adesso.</h3>
+          <p>Ridefinire il confine tra pensiero umano e potenza digitale, diventando l'architetto di un mondo in cui ogni idea può diventare realtà istantanea e ogni brand può comunicare la propria essenza senza limiti di tempo o budget.</p>
         </div>
+        <div class="mv-pane-orb mv-pane-orb--v"></div>
+        <div class="mv-pane-grid"></div>
+      </div>
+
+    </div>
+
+    <div class="container">
+      <div class="about-quote reveal">
+        <blockquote>
+          "L'AI non sostituisce l'umanità.<br />
+          Ne abbatte i limiti."
+        </blockquote>
       </div>
     </div>
   </section>
@@ -487,11 +478,24 @@
       <div class="footer-top">
         <div class="footer-brand">
           <div class="footer-logo">
-            <div class="logo-wordmark-wrap logo-wordmark-wrap--footer">
-              <div class="logo-beam-left"></div>
-              <span class="logo-wordmark logo-wordmark--footer">FUTURE<span class="logo-mid-spark" aria-hidden="true"></span>NOVA</span>
-              <div class="logo-beam-right"></div>
-            </div>
+            <svg class="logo-svg logo-svg--footer" viewBox="0 0 260 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <filter id="fn-glow-f" x="-15%" y="-120%" width="130%" height="340%">
+                  <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="b1"/>
+                  <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="b2"/>
+                  <feColorMatrix in="b2" type="matrix"
+                    values="0 0 0 0 0.05  0 0.3 0 0 0.55  0 0 1 0 1  0 0 0 0.9 0" result="blue"/>
+                  <feMerge><feMergeNode in="blue"/><feMergeNode in="b1"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+              </defs>
+              <line x1="1" y1="18" x2="20" y2="18" stroke="#9fd8ff" stroke-width="1.5" filter="url(#fn-glow-f)"/>
+              <line x1="1" y1="10" x2="1" y2="26" stroke="white" stroke-width="1.2" filter="url(#fn-glow-f)"/>
+              <text x="24" y="26" font-family="Orbitron,monospace" font-weight="900" font-size="20"
+                textLength="213" lengthAdjust="spacingAndGlyphs" fill="white" filter="url(#fn-glow-f)">FUTURENOVA</text>
+              <line x1="240" y1="18" x2="258" y2="18" stroke="#9fd8ff" stroke-width="1.5" filter="url(#fn-glow-f)"/>
+              <line x1="258" y1="10" x2="258" y2="26" stroke="white" stroke-width="1.2" filter="url(#fn-glow-f)"/>
+              <line x1="243" y1="10" x2="258" y2="26" stroke="#c8eeff" stroke-width="1.5" filter="url(#fn-glow-f)"/>
+            </svg>
           </div>
           <p class="footer-tagline">Augmented Marketing Agency</p>
           <p class="footer-mission">Rendiamo la creatività d'avanguardia<br />accessibile a tutti.</p>
