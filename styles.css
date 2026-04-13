@@ -165,14 +165,16 @@ body:hover .cursor-follower { opacity: 1; }
   color: var(--white-30); font-weight: 400; margin-top: 3px;
 }
 
-/* ── LOGO CANVAS ── */
-.logo-canvas {
+/* ── LOGO IMAGE ── */
+.logo-img {
   display: block;
-  /* actual px dimensions set by JS via devicePixelRatio */
-  width: 220px; height: 34px;
+  width: 190px; height: 38px;
+  object-fit: cover;
+  object-position: center 50%;
+  mix-blend-mode: screen;   /* black bg → transparent, glow shines through */
 }
-.logo-canvas--footer {
-  width: 260px; height: 40px;
+.logo-img--footer {
+  width: 230px; height: 46px;
 }
 .nav-links {
   display: flex; align-items: center; gap: 36px;
