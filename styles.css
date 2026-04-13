@@ -168,13 +168,13 @@ body:hover .cursor-follower { opacity: 1; }
 /* ── LOGO IMAGE ── */
 .logo-img {
   display: block;
-  width: 190px; height: 38px;
-  object-fit: cover;
-  object-position: center 50%;
+  width: 200px;
+  height: auto;
   mix-blend-mode: screen;   /* black bg → transparent, glow shines through */
 }
 .logo-img--footer {
-  width: 230px; height: 46px;
+  width: 260px;
+  height: auto;
 }
 .nav-links {
   display: flex; align-items: center; gap: 36px;
