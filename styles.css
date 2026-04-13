@@ -169,12 +169,12 @@ body:hover .cursor-follower { opacity: 1; }
 /* ── LOGO IMAGE ── */
 .logo-img {
   display: block;
-  width: 210px;
+  width: 160px;
   height: auto;
   mix-blend-mode: screen;
 }
 .logo-img--footer {
-  width: 270px;
+  width: 220px;
   height: auto;
 }
 .nav-links {
