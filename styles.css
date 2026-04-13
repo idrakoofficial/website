@@ -145,10 +145,11 @@ body:hover .cursor-follower { opacity: 1; }
 .nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 900;
   padding: 20px 0;
+  background: rgba(3, 5, 8, 0.6);
   transition: all 0.4s;
 }
 .nav.scrolled {
-  background: rgba(3, 5, 8, 0.85);
+  background: rgba(3, 5, 8, 0.92);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border);
   padding: 14px 0;
