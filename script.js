@@ -5,6 +5,102 @@
 
 'use strict';
 
+/* ── CANVAS LOGO ── */
+(function initLogoCanvas() {
+  function drawLogo(canvas) {
+    if (!canvas) return;
+    const isFooter = canvas.classList.contains('logo-canvas--footer');
+    const dpr      = window.devicePixelRatio || 1;
+    const cssW     = isFooter ? 260 : 220;
+    const cssH     = isFooter ? 40  : 34;
+    const fontSize = isFooter ? 24  : 19;
+
+    canvas.style.width  = cssW + 'px';
+    canvas.style.height = cssH + 'px';
+    canvas.width  = cssW * dpr;
+    canvas.height = cssH * dpr;
+
+    const ctx = canvas.getContext('2d');
+    ctx.scale(dpr, dpr);
+    ctx.clearRect(0, 0, cssW, cssH);
+
+    const cy = cssH / 2;   /* vertical centre */
+
+    /* ── helpers ── */
+    function glowLine(x1, y1, x2, y2, col, width) {
+      ctx.save();
+      ctx.shadowColor = 'rgba(80,190,255,0.9)';
+      ctx.shadowBlur  = 8;
+      ctx.strokeStyle = col;
+      ctx.lineWidth   = width;
+      ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke();
+      ctx.shadowBlur  = 18;
+      ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke();
+      ctx.restore();
+    }
+
+    /* ── text ── */
+    ctx.font = `900 ${fontSize}px Orbitron, monospace`;
+    ctx.textBaseline = 'middle';
+
+    /* measure AFTER setting font */
+    const textW = ctx.measureText('FUTURENOVA').width;
+    const beamGap = 5;
+    const leftEnd  = 24;                        /* where text starts */
+    const rightStart = leftEnd + textW + beamGap; /* where right beam starts */
+
+    /* left beam – horizontal */
+    const leftBeamStart = leftEnd - beamGap - 22;
+    glowLine(leftBeamStart, cy, leftEnd - beamGap, cy, 'rgba(200,230,255,0.95)', 1.5);
+    /* left cross – vertical */
+    glowLine(leftBeamStart, cy - 10, leftBeamStart, cy + 10, 'rgba(255,255,255,0.9)', 1);
+
+    /* GLOW PASSES — outer → inner */
+    const glowLayers = [
+      { blur: 24, alpha: 0.30, col: 'rgba(0,90,255,1)'   },
+      { blur: 14, alpha: 0.55, col: 'rgba(30,150,255,1)'  },
+      { blur: 7,  alpha: 0.75, col: 'rgba(120,210,255,1)' },
+      { blur: 3,  alpha: 0.90, col: 'rgba(210,240,255,1)' },
+    ];
+    glowLayers.forEach(({ blur, col }) => {
+      ctx.save();
+      ctx.shadowColor = col;
+      ctx.shadowBlur  = blur;
+      ctx.fillStyle   = '#ffffff';
+      ctx.fillText('FUTURENOVA', leftEnd, cy + 1);
+      ctx.restore();
+    });
+
+    /* crisp white top pass */
+    ctx.save();
+    ctx.shadowBlur  = 0;
+    ctx.fillStyle   = '#ffffff';
+    ctx.fillText('FUTURENOVA', leftEnd, cy + 1);
+    ctx.restore();
+
+    /* right beam – horizontal */
+    glowLine(rightStart, cy, rightStart + 22, cy, 'rgba(200,230,255,0.95)', 1.5);
+    /* right cross – vertical */
+    glowLine(rightStart + 22, cy - 10, rightStart + 22, cy + 10, 'rgba(255,255,255,0.9)', 1);
+    /* right diagonal bolt */
+    glowLine(rightStart + 5, cy - 11, rightStart + 22, cy + 7, 'rgba(180,230,255,0.85)', 1.5);
+  }
+
+  function renderAll() {
+    drawLogo(document.getElementById('logoNav'));
+    drawLogo(document.getElementById('logoFooter'));
+  }
+
+  /* Draw after fonts are confirmed loaded */
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(renderAll);
+  } else {
+    window.addEventListener('load', renderAll);
+  }
+  /* Redraw on resize (handles devicePixelRatio changes on zoom) */
+  window.addEventListener('resize', renderAll, { passive: true });
+})();
+
 /* ── CUSTOM CURSOR ── */
 (function initCursor() {
   const cursor = document.getElementById('cursor');
@@ -258,41 +354,49 @@
   }, { passive: true });
 })();
 
-/* ── GLITCH HOVER on logo ── */
+/* ── GLITCH hover on canvas logo ── */
 (function initGlitch() {
-  const logo = document.querySelector('.nav-logo .logo-wordmark');
-  if (!logo) return;
+  const navLink = document.querySelector('.nav-logo');
+  const canvas  = document.getElementById('logoNav');
+  if (!navLink || !canvas) return;
 
   const glitchChars = '!@#X01<>|_';
-  const parts = ['FUTURE', 'NOVA'];
-  let glitchTimer;
+  const full = 'FUTURENOVA';
+  let timer;
 
-  logo.addEventListener('mouseenter', () => {
+  navLink.addEventListener('mouseenter', () => {
     let count = 0;
-    glitchTimer = setInterval(() => {
-      if (count > 7) {
-        clearInterval(glitchTimer);
-        /* restore text nodes */
-        logo.childNodes[0].textContent = 'FUTURE';
-        logo.childNodes[2].textContent = 'NOVA';
-        return;
-      }
-      const full = 'FUTURENOVA';
-      const r    = Math.floor(Math.random() * full.length);
-      const gc   = glitchChars[Math.floor(Math.random() * glitchChars.length)];
-      /* apply to correct text node */
-      if (r < 6) {
-        logo.childNodes[0].textContent = 'FUTURE'.split('').map((c, i) => i === r ? gc : c).join('');
-      } else {
-        logo.childNodes[2].textContent = 'NOVA'.split('').map((c, i) => i === (r - 6) ? gc : c).join('');
-      }
+    timer = setInterval(() => {
+      if (count > 8) { clearInterval(timer); return; }
+      const r  = Math.floor(Math.random() * full.length);
+      const gc = glitchChars[Math.floor(Math.random() * glitchChars.length)];
+      const word = full.split('').map((c, i) => i === r ? gc : c).join('');
+
+      const dpr     = window.devicePixelRatio || 1;
+      const cssW    = 220, cssH = 34, fontSize = 19;
+      const cy      = cssH / 2;
+      const ctx     = canvas.getContext('2d');
+      ctx.save();
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      ctx.clearRect(0, 0, cssW, cssH);
+      ctx.font = `900 ${fontSize}px Orbitron, monospace`;
+      ctx.textBaseline = 'middle';
+
+      [{ blur:14, col:'rgba(30,150,255,1)' }, { blur:4, col:'rgba(180,230,255,1)' }].forEach(({ blur, col }) => {
+        ctx.shadowColor = col; ctx.shadowBlur = blur; ctx.fillStyle = '#fff';
+        ctx.fillText(word, 24, cy + 1);
+      });
+      ctx.shadowBlur = 0; ctx.fillStyle = '#fff';
+      ctx.fillText(word, 24, cy + 1);
+      ctx.restore();
       count++;
     }, 55);
   });
 
-  logo.addEventListener('mouseleave', () => {
-    clearInterval(glitchTimer);
-    logo.childNodes[0].textContent = 'FUTURE';
-    logo.childNodes[2].textContent = 'NOVA';
+  navLink.addEventListener('mouseleave', () => {
+    clearInterval(timer);
+    /* redraw clean logo */
+    const evt = new Event('resize');
+    window.dispatchEvent(evt);
   });
 })();

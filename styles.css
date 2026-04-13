@@ -165,14 +165,14 @@ body:hover .cursor-follower { opacity: 1; }
   color: var(--white-30); font-weight: 400; margin-top: 3px;
 }
 
-/* ── LOGO SVG ── */
-.logo-svg {
+/* ── LOGO CANVAS ── */
+.logo-canvas {
   display: block;
-  width: 200px; height: 28px;
-  overflow: visible;
+  /* actual px dimensions set by JS via devicePixelRatio */
+  width: 220px; height: 34px;
 }
-.logo-svg--footer {
-  width: 240px; height: 33px;
+.logo-canvas--footer {
+  width: 260px; height: 40px;
 }
 .nav-links {
   display: flex; align-items: center; gap: 36px;
