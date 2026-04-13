@@ -165,26 +165,16 @@ body:hover .cursor-follower { opacity: 1; }
   color: var(--white-30); font-weight: 400; margin-top: 3px;
 }
 
-/* ── LOGO TEXT ── */
-.logo-text {
+/* ── LOGO IMAGE ── */
+.logo-img {
   display: block;
-  font-family: 'Orbitron', sans-serif;
-  font-weight: 900;
-  font-size: 20px;
-  letter-spacing: 3px;
-  color: #ffffff;
-  text-transform: uppercase;
-  white-space: nowrap;
-  text-shadow:
-    0 0 3px  #fff,
-    0 0 8px  rgba(255,255,255,0.8),
-    0 0 14px rgba(0,168,255,1),
-    0 0 28px rgba(0,168,255,0.7),
-    0 0 48px rgba(0,168,255,0.35);
+  width: 210px;
+  height: auto;
+  mix-blend-mode: screen;
 }
-.logo-text--footer {
-  font-size: 26px;
-  letter-spacing: 4px;
+.logo-img--footer {
+  width: 270px;
+  height: auto;
 }
 .nav-links {
   display: flex; align-items: center; gap: 36px;
