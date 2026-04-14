@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Audit Marketing Gratuito — FutureNova</title>
+  <meta name="description" content="Scopri quanto stai perdendo senza una strategia marketing aumentata. Prenota il tuo Audit gratuito da 30 minuti." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@900&family=Inter:wght@300;400;500;600;700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- CANVAS BACKGROUND -->
+  <canvas id="bgCanvas"></canvas>
+
+  <!-- NOISE OVERLAY -->
+  <div class="noise-overlay"></div>
+
+  <!-- URGENCY BAR -->
+  <div class="urgency-bar">
+    <span class="urgency-dot"></span>
+    ⚡ Solo <strong>5 posti disponibili</strong> questa settimana — Offerta valida fino a domenica
+  </div>
+
+  <!-- HEADER — logo only, no nav -->
+  <header class="lp-header">
+    <div class="lp-logo">
+      <span class="logo-text">FUTURENOVA</span>
+      <span class="logo-tag">augmented marketing agency</span>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="lp-hero" id="top">
+    <div class="container">
+      <div class="hero-grid">
+
+        <!-- LEFT: copy -->
+        <div class="hero-copy reveal">
+          <div class="hero-badge">
+            <span class="badge-dot"></span>
+            Audit Marketing AI — 100% Gratuito
+          </div>
+          <h1 class="hero-title">
+            Il tuo marketing ti sta<br />
+            <span class="gradient-text">costando clienti</span><br />
+            ogni giorno.
+          </h1>
+          <p class="hero-sub">
+            In 30 minuti analizziamo gratuitamente la tua strategia marketing
+            e ti mostriamo esattamente dove stai perdendo soldi e opportunità.
+          </p>
+          <ul class="hero-bullets">
+            <li><span class="check">✓</span> Analisi completa dei tuoi canali digitali</li>
+            <li><span class="check">✓</span> Report personalizzato con i punti critici</li>
+            <li><span class="check">✓</span> Piano d'azione immediato con l'AI</li>
+          </ul>
+          <div class="hero-proof">
+            <div class="avatars">
+              <div class="av" style="background:#00a8ff">M</div>
+              <div class="av" style="background:#7b61ff">S</div>
+              <div class="av" style="background:#00e5ff;color:#030508">L</div>
+            </div>
+            <span>+47 imprenditori hanno già prenotato questo mese</span>
+          </div>
+        </div>
+
+        <!-- RIGHT: form -->
+        <div class="hero-form-wrap reveal">
+          <div class="form-card" id="leadForm">
+            <div class="form-header">
+              <span class="form-label">🎯 Nessun impegno — Zero spam</span>
+              <h2>Prenota il tuo Audit</h2>
+              <p>Compila il form, ti contatteremo entro 24h</p>
+            </div>
+            <form id="theForm">
+              <div class="form-group">
+                <input type="text" name="nome" placeholder="Il tuo nome *" required />
+              </div>
+              <div class="form-group">
+                <input type="email" name="email" placeholder="La tua email *" required />
+              </div>
+              <div class="form-group">
+                <input type="tel" name="tel" placeholder="WhatsApp / Telefono *" required />
+              </div>
+              <div class="form-group">
+                <select name="settore">
+                  <option value="" disabled selected>Il tuo settore</option>
+                  <option>E-commerce</option>
+                  <option>Ristorazione</option>
+                  <option>Professionisti / Studi</option>
+                  <option>Retail / Negozi</option>
+                  <option>Immobiliare</option>
+                  <option>Altro</option>
+                </select>
+              </div>
+              <button type="submit" class="btn-submit">
+                Voglio il mio Audit Gratuito →
+              </button>
+            </form>
+            <p class="form-disclaimer">🔒 I tuoi dati sono protetti. Non condividiamo nulla.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PAIN -->
+  <section class="pain-section">
+    <div class="container">
+      <h2 class="section-title reveal">Ti riconosci in almeno uno di questi?</h2>
+      <div class="pain-grid">
+        <div class="pain-card reveal">
+          <div class="pain-icon">💸</div>
+          <h3>Spendi in ads senza risultati</h3>
+          <p>Budget bruciato ogni mese in campagne che non convertono. Il ROAS è sotto le aspettative e non sai perché.</p>
+        </div>
+        <div class="pain-card reveal">
+          <div class="pain-icon">📉</div>
+          <h3>I tuoi contenuti non convertono</h3>
+          <p>Pubblichi regolarmente ma i follower non diventano mai clienti. Tanta fatica, pochi risultati concreti.</p>
+        </div>
+        <div class="pain-card reveal">
+          <div class="pain-icon">🏃</div>
+          <h3>I competitor ti stanno superando</h3>
+          <p>Li vedi crescere online mentre tu rimani fermo. Stanno usando l'AI e strategie che tu non conosci ancora.</p>
+        </div>
+      </div>
+      <div class="pain-cta reveal">
+        <p>Se hai risposto sì anche solo a uno di questi,<br /><strong>stai perdendo clienti ogni giorno.</strong></p>
+        <a href="#leadForm" class="btn-ghost-blue">Risolvi adesso — è gratuito →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUTION -->
+  <section class="solution-section">
+    <div class="container">
+      <div class="solution-grid">
+        <div class="solution-copy reveal">
+          <span class="section-label">La soluzione</span>
+          <h2>Marketing Aumentato<br /><span class="gradient-text">dall'intelligenza artificiale</span></h2>
+          <p class="solution-desc">FutureNova combina creatività d'avanguardia e AI per trasformare il tuo marketing in una macchina da clienti che lavora 24/7.</p>
+          <ol class="solution-steps">
+            <li>
+              <span class="step-num">01</span>
+              <div><strong>Analizziamo</strong> — Audit completo della tua presenza digitale con strumenti AI avanzati</div>
+            </li>
+            <li>
+              <span class="step-num">02</span>
+              <div><strong>Strategizziamo</strong> — Piano personalizzato basato sui dati, non sulle opinioni</div>
+            </li>
+            <li>
+              <span class="step-num">03</span>
+              <div><strong>Eseguiamo</strong> — Campagne, contenuti e automazioni che moltiplicano i risultati</div>
+            </li>
+          </ol>
+        </div>
+        <div class="stats-grid reveal">
+          <div class="stat-card">
+            <div class="stat-num" data-target="340">0</div><span class="stat-suffix">%</span>
+            <div class="stat-label">ROAS medio clienti</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num" data-target="200">0</div><span class="stat-suffix">+</span>
+            <div class="stat-label">Brand trasformati</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num" data-target="48">0</div><span class="stat-suffix">h</span>
+            <div class="stat-label">Tempo medio di avvio</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num" data-target="98">0</div><span class="stat-suffix">%</span>
+            <div class="stat-label">Clienti soddisfatti</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testi-section">
+    <div class="container">
+      <h2 class="section-title reveal">Cosa dicono i nostri clienti</h2>
+      <div class="testi-grid">
+
+        <div class="testi-card reveal">
+          <div class="stars">★★★★★</div>
+          <p class="testi-quote">"In soli 3 mesi abbiamo triplicato il ROAS e ridotto i costi pubblicitari del 40%. FutureNova non è una semplice agenzia — è un partner strategico che ragiona in termini di risultati concreti."</p>
+          <div class="testi-author">
+            <div class="testi-av" style="background:#00a8ff">M</div>
+            <div>
+              <strong>Marco Bianchi</strong>
+              <span>CEO — ModaUp E-commerce</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card testi-featured reveal">
+          <div class="featured-label">⭐ Più popolare</div>
+          <div class="stars">★★★★★</div>
+          <p class="testi-quote">"Non credevo che l'AI potesse fare la differenza nel settore legale. In 6 mesi le richieste di consulenza online sono aumentate del 220%. Il team è sempre disponibile e professionale."</p>
+          <div class="testi-author">
+            <div class="testi-av" style="background:#7b61ff">S</div>
+            <div>
+              <strong>Sara Moretti</strong>
+              <span>Partner — Studio Legale Moretti</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card reveal">
+          <div class="stars">★★★★★</div>
+          <p class="testi-quote">"Da quando lavoriamo con FutureNova le prenotazioni online sono aumentate del 180% e abbiamo aperto una seconda sede. Un investimento che si ripaga da solo in meno di un mese."</p>
+          <div class="testi-author">
+            <div class="testi-av" style="background:#00e5ff;color:#030508">L</div>
+            <div>
+              <strong>Luca Ricci</strong>
+              <span>Titolare — Ristorante Ricci Milano</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <div class="container">
+      <div class="cta-inner reveal">
+        <span class="section-label">Ultima chance</span>
+        <h2>Prenota ora il tuo<br /><span class="gradient-text">Audit Gratuito</span></h2>
+        <p class="cta-sub">Solo <strong>5 posti disponibili</strong> questa settimana.<br />Offerta valida fino a domenica.</p>
+        <a href="#leadForm" class="btn-cta-main">
+          Voglio il mio Audit Gratuito →
+        </a>
+        <div class="cta-tags">
+          <span>✓ 100% Gratuito</span>
+          <span>✓ Nessun impegno</span>
+          <span>✓ Risposta entro 24h</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER MINIMAL -->
+  <footer class="lp-footer">
+    <div class="container">
+      <span class="logo-text logo-text--sm">FUTURENOVA</span>
+      <p>© 2025 FutureNova — Augmented Marketing Agency</p>
+      <div class="footer-links">
+        <a href="mailto:info@futurenova.agency">info@futurenova.agency</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
