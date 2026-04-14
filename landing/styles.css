@@ -142,13 +142,22 @@ img { max-width: 100%; }
 /* ── HEADER ── */
 .lp-header {
   position: relative; z-index: 10;
-  padding: 20px 32px;
+  padding: 10px 32px;
   display: flex; align-items: center; justify-content: center;
   border-bottom: 1px solid var(--border);
-  background: rgba(3,5,8,0.6);
+  background: rgba(3,5,8,0.8);
   backdrop-filter: blur(20px);
 }
-.lp-logo { text-align: center; }
+.lp-logo-img {
+  display: block;
+  width: 180px;
+  height: auto;
+  mix-blend-mode: screen;
+}
+.lp-logo-img--footer {
+  width: 140px;
+  height: auto;
+}
 
 /* ── SCROLL REVEAL ── */
 .reveal {
